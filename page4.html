@@ -2,171 +2,226 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For My Dearest Aamna - Page 4</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Cards - Page 4</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #eadbe0;
-      color: #34343a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#e0d0d8;
+      color:#34343a;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    .wrapper {
-      width: 100%;
-      max-width: 430px;
-      padding: 40px 24px 30px;
-      text-align: center;
-      position: relative;
+
+    .wrapper{
+      width:100%;
+      max-width:430px;
+      padding:40px 24px 30px;
+      text-align:center;
     }
-    .card-outer {
-      background: #efe6eb;
-      border-radius: 26px;
-      padding: 34px 22px 30px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
+
+    .card{
+      background:#efe6eb;
+      border-radius:26px;
+      padding:30px 24px 30px;
+      box-shadow:0 20px 55px rgba(0,0,0,0.18);
     }
-    .title {
-      font-family: "Playfair Display", serif;
-      font-size: 26px;
-      color: #c84857;
-      margin-bottom: 12px;
+
+    .title{
+      font-family:"Playfair Display",serif;
+      font-size:24px;
+      color:#c84857;
+      margin-bottom:10px;
     }
-    .divider {
-      height: 1px;
-      background: #c9bcc4;
-      margin: 10px 0 18px;
+
+    hr.line{
+      border:none;
+      border-top:1px solid #d3c0c9;
+      margin:6px 0 18px;
     }
-    .row-top {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      margin-bottom: 18px;
-      padding: 0 4px;
+
+    .from-to-row{
+      display:flex;
+      justify-content:space-between;
+      font-size:13px;
+      margin-bottom:18px;
     }
-    .row-top span.label {
-      font-weight: 600;
-      letter-spacing: 0.06em;
+
+    .from-to-row span.label{font-weight:600;}
+
+    .inner-card{
+      background:#f4ecef;
+      border-radius:22px;
+      padding:16px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.16);
+      position:relative;
     }
-    .inner-card {
-      background: #efe6eb;
-      border-radius: 20px;
-      padding: 12px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.13);
-      margin-bottom: 18px;
+
+    .image-frame{
+      background:#f7f2f5;
+      border-radius:18px;
+      overflow:hidden;
+      position:relative;
+      border:2px solid #f2c2c9;
     }
-    .inner-frame {
-      position: relative;
-      border-radius: 18px;
-      border: 2px solid #f0c4c7;
-      overflow: hidden;
+
+    .image-frame img{
+      width:100%;
+      display:block;
     }
-    .inner-frame img {
-      width: 100%;
-      display: block;
+
+    .slide-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:34px;
+      height:34px;
+      border-radius:999px;
+      background:#f7e0e4;
+      border:2px solid #f0b2be;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:18px;
+      color:#d45d72;
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
     }
-    .img-caption {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      text-align: center;
-      font-family: "Playfair Display", serif;
-      font-size: 16px;
-      color: #d1576b;
+
+    .slide-btn.left{left:10px;}
+    .slide-btn.right{right:10px;}
+
+    .bottom-caption{
+      position:absolute;
+      bottom:12px;
+      left:50%;
+      transform:translateX(-50%);
+      font-family:"Playfair Display",serif;
+      font-size:14px;
+      color:#d44e66;
+      text-shadow:0 2px 4px rgba(0,0,0,0.25);
     }
-    .img-heart {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      font-size: 20px;
-      color: #d1576b;
+
+    .heart-tag{
+      position:absolute;
+      bottom:12px;
+      right:12px;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:#f3b1bd;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:17px;
+      box-shadow:0 7px 14px rgba(0,0,0,0.22);
     }
-    .row-bottom {
-      margin-top: 8px;
-      padding: 0 4px;
-      text-align: left;
-      font-size: 13px;
-      line-height: 1.6;
+
+    .meta-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      font-size:13px;
+      margin-top:18px;
     }
-    .row-bottom .label {
-      font-weight: 600;
+
+    .meta-row span.label{font-weight:600;}
+
+    .meta-row .signature{
+      font-family:"Playfair Display",serif;
+      font-size:14px;
+      color:#c84857;
+      font-style:italic;
+      display:flex;
+      align-items:center;
+      gap:4px;
     }
-    .love-note {
-      font-family: "Playfair Display", serif;
-      font-size: 15px;
-      color: #d1576b;
-      text-align: right;
-      margin-top: 4px;
-      white-space: nowrap;
+
+    .nav-row{
+      margin-top:26px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .nav-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 30px;
+
+    .nav-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 26px;
+      border-radius:999px;
+      border:none;
+      background:#e4b5c9;
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+      font-size:15px;
+      font-weight:500;
+      color:#3f3140;
+      cursor:pointer;
+      text-decoration:none;
     }
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 26px;
-      border-radius: 999px;
+
+    .nav-btn.back{background:#75a4de;color:#10243b;}
+    .nav-btn span.arrow{font-size:15px;}
+    .nav-btn.back span.arrow{margin-right:6px;}
+    .nav-btn.next span.arrow{margin-left:6px;}
+
+    .music-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       border: none;
-      background: #e4b5c9;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-      font-size: 15px;
-      font-weight: 500;
-      color: #3f3140;
+      background: #d7424d;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      text-decoration: none;
     }
-    .nav-btn.back {
-      background: #75a4de;
-      color: #10243b;
-    }
-    .nav-btn span.arrow {
-      font-size: 15px;
-    }
-    .nav-btn.back span.arrow { margin-right: 6px; }
-    .nav-btn.next span.arrow { margin-left: 6px; }
-    .nav-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-    }
-    @media (max-width: 360px) {
-      .title { font-size: 24px; }
-      .love-note { font-size: 14px; }
-    }
+    .music-toggle.paused { background:#a0a0a0; }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <div class="card-outer">
+    <div class="card">
       <div class="title">Special Cards</div>
-      <div class="divider"></div>
+      <hr class="line">
 
-      <div class="row-top">
+      <div class="from-to-row">
         <div><span class="label">FROM:</span> Me</div>
         <div><span class="label">TO:</span> My Love</div>
       </div>
 
       <div class="inner-card">
-        <div class="inner-frame">
-          <img src="https://i.ibb.co/CshFH6gy/7594bad28bd1dccf359b98c64b93d0bd.jpg" alt="Some flowers for you">
-          <div class="img-caption">Some Flowers For You</div>
-          <div class="img-heart">❤</div>
+        <div class="image-frame">
+          <img src="https://i.ibb.co/CshFH6gy/7594bad28bd1dccf359b98c64b93d0bd.jpg" alt="Cat with flower">
+
+          <div class="slide-btn left">〈</div>
+          <div class="slide-btn right">〉</div>
+
+          <div class="bottom-caption">Some Flowers For You</div>
+          <div class="heart-tag">💗</div>
         </div>
       </div>
 
-      <div class="row-bottom">
-        <div><span class="label">DATE:</span> Now</div>
-        <div><span class="label">VALID FOR:</span> Forever</div>
-        <div class="love-note">
-          with love, Your pyaara Janwar 💌
+      <div class="meta-row">
+        <div>
+          <div><span class="label">DATE:</span> Now</div>
+          <div><span class="label">VALID FOR:</span> Forever</div>
+        </div>
+        <div class="signature">
+          with love, Your Pyaara Janwar 💌
         </div>
       </div>
     </div>
@@ -175,11 +230,77 @@
       <a href="page3.html" class="nav-btn back">
         <span class="arrow">←</span> Back
       </a>
-
       <a href="page5.html" class="nav-btn next">
         Next <span class="arrow">→</span>
       </a>
     </div>
   </div>
+
+  <button id="musicToggle" class="music-toggle paused" aria-label="Toggle music">🔈</button>
+  <audio id="bgMusic" src="https://files.catbox.moe/bv5zfz.mp3" preload="auto"></audio>
+
+  <script>
+    (function () {
+      const MUSIC_TIME_KEY = "bgMusicTime";
+      const MUSIC_STATE_KEY = "bgMusicState";
+
+      const audio = document.getElementById("bgMusic");
+      const btn   = document.getElementById("musicToggle");
+      if (!audio || !btn) return;
+
+      let savedTime  = parseFloat(localStorage.getItem(MUSIC_TIME_KEY) || "0");
+      let savedState = localStorage.getItem(MUSIC_STATE_KEY) || "paused";
+
+      function setButton(state) {
+        if (state === "playing") {
+          btn.classList.remove("paused");
+          btn.textContent = "🔊";
+        } else {
+          btn.classList.add("paused");
+          btn.textContent = "🔈";
+        }
+      }
+
+      setButton(savedState);
+
+      audio.addEventListener("loadedmetadata", () => {
+        if (!isNaN(savedTime) && savedTime > 0 && savedTime < audio.duration) {
+          audio.currentTime = savedTime;
+        }
+        if (savedState === "playing") {
+          const p = audio.play();
+          if (p && p.catch) {
+            p.catch(() => {
+              savedState = "paused";
+              setButton("paused");
+            });
+          }
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          const p = audio.play();
+          if (p && p.catch) { p.catch(() => {}); }
+          savedState = "playing";
+        } else {
+          audio.pause();
+          savedState = "paused";
+        }
+        setButton(savedState);
+        localStorage.setItem(MUSIC_STATE_KEY, savedState);
+      });
+
+      function saveState() {
+        localStorage.setItem(MUSIC_TIME_KEY, audio.currentTime.toString());
+        localStorage.setItem(MUSIC_STATE_KEY, audio.paused ? "paused" : "playing");
+      }
+
+      window.addEventListener("beforeunload", saveState);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveState();
+      });
+    })();
+  </script>
 </body>
 </html>

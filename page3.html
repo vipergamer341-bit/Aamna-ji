@@ -2,162 +2,259 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For My Dearest Aamna - Page 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Letter For You - Page 3</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #eadbe0;
-      color: #34343a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#e0d0d8;
+      color:#34343a;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    .wrapper {
-      width: 100%;
-      max-width: 430px;
-      padding: 40px 24px 30px;
-      text-align: center;
-      position: relative;
+
+    .wrapper{
+      width:100%;
+      max-width:430px;
+      padding:40px 24px 30px;
+      text-align:center;
+      position:relative;
     }
-    .card {
-      background: #efeaed;
-      border-radius: 26px;
-      padding: 40px 24px 54px;
-      position: relative;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
-      overflow: hidden;
+
+    .card{
+      background:#efe6eb;
+      border-radius:26px;
+      padding:30px 24px 32px;
+      text-align:left;
+      box-shadow:0 20px 55px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:hidden;
     }
-    .top-heading {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.17em;
-      color: #36414d;
-      margin-bottom: 6px;
+
+    .letter-top{
+      font-size:11px;
+      letter-spacing:0.3em;
+      text-transform:uppercase;
+      text-align:center;
+      color:#42485b;
+      margin-bottom:6px;
     }
-    .for-you {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      color: #d79aac;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-      margin-bottom: 10px;
+
+    .letter-main-title{
+      font-family:"Playfair Display",serif;
+      text-align:center;
+      font-size:22px;
+      letter-spacing:0.18em;
+      text-transform:uppercase;
+      color:#ca748c;
+      margin-bottom:6px;
     }
-    .for-you span {
-      font-size: 17px;
+
+    .letter-sub{
+      text-align:center;
+      font-family:"Playfair Display",serif;
+      font-size:16px;
+      color:#ca748c;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin-bottom:22px;
     }
-    .dear {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      color: #d79aac;
-      font-weight: 600;
-      margin-bottom: 20px;
+
+    .body-text{
+      font-size:13px;
+      line-height:1.7;
+      color:#55515b;
+      margin-bottom:16px;
+      max-width:260px;
     }
-    .message {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444;
-      padding: 0 8px;
-      margin-bottom: 32px;
+
+    .signature{
+      font-family:"Playfair Display",serif;
+      font-size:15px;
+      font-style:italic;
+      color:#c84857;
+      margin-top:4px;
+      display:flex;
+      align-items:center;
+      gap:4px;
     }
-    .message .heart {
-      color: #cc5c7a;
-      font-size: 15px;
+
+    .signature span.emoji{font-size:17px;}
+
+    .kitten{
+      position:absolute;
+      right:10px;
+      top:-20px;
+      width:120px;
     }
-    .signature {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      font-weight: 600;
-      color: #34343a;
-      margin-top: 6px;
+
+    .kitten img{width:100%;display:block;}
+
+    .stamp{
+      position:absolute;
+      left:-18px;
+      bottom:-35px;
+      width:140px;
+      opacity:0.9;
     }
-    .stamp {
-      position: absolute;
-      left: -30px;
-      bottom: 12px;
-      width: 140px;
-      pointer-events: none;
-      opacity: 0.9;
+
+    .stamp img{width:100%;display:block;}
+
+    .nav-row{
+      margin-top:26px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .kitten {
-      position: absolute;
-      right: -12px;
-      top: -70px;
-      width: 150px;
+
+    .nav-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 26px;
+      border-radius:999px;
+      border:none;
+      background:#e4b5c9;
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+      font-size:15px;
+      font-weight:500;
+      color:#3f3140;
+      cursor:pointer;
+      text-decoration:none;
     }
-    .nav-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 18px;
-    }
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 26px;
-      border-radius: 999px;
+
+    .nav-btn.back{background:#75a4de;color:#10243b;}
+    .nav-btn span.arrow{font-size:15px;}
+    .nav-btn.back span.arrow{margin-right:6px;}
+    .nav-btn.next span.arrow{margin-left:6px;}
+
+    .music-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       border: none;
-      background: #e4b5c9;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-      font-size: 15px;
-      font-weight: 500;
-      color: #3f3140;
+      background: #d7424d;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      text-decoration: none;
     }
-    .nav-btn.back {
-      background: #75a4de;
-      color: #10243b;
-    }
-    .nav-btn span.arrow {
-      font-size: 15px;
-    }
-    .nav-btn.back span.arrow { margin-right: 6px; }
-    .nav-btn.next span.arrow { margin-left: 6px; }
-    .nav-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-    }
+    .music-toggle.paused { background:#a0a0a0; }
   </style>
 </head>
 <body>
   <div class="wrapper">
     <div class="card">
-      <img class="kitten" src="https://i.ibb.co/pj1mt13w/1763395397586.png" alt="kitten">
+      <div class="letter-top">A LETTER</div>
+      <div class="letter-main-title">FOR YOU ✦</div>
+      <div class="letter-sub">My Dearest Aamna,</div>
 
-      <div class="top-heading">A LETTER</div>
-
-      <div class="for-you">
-        FOR YOU <span>✦</span>
+      <div class="kitten">
+        <img src="https://i.ibb.co/pj1mt13w/1763395397586.png" alt="Kitten holding flowers">
       </div>
 
-      <div class="dear">My Dearest Aamna,</div>
-
-      <p class="message">
-        I'm sorry for the moments I hurt you. You mean
-        everything to me — and I just want your smile
-        back. <span class="heart">💗</span>
+      <p class="body-text">
+        I'm sorry for the moments I hurt you. You mean everything to me — and I just want your smile back. 💗
       </p>
 
-      <div class="signature">With all my love — Your pyaara Janwar💌</div>
+      <div class="stamp">
+        <img src="https://i.ibb.co/BH4jv8Zt/1763395431826.png" alt="Love stamp">
+      </div>
 
-      <img class="stamp" src="https://i.ibb.co/BH4jv8Zt/1763395431826.png" alt="love stamp">
+      <div class="signature">
+        with all my love — Your Pyaara Janwar <span class="emoji">💌</span>
+      </div>
     </div>
 
     <div class="nav-row">
       <a href="page2.html" class="nav-btn back">
         <span class="arrow">←</span> Back
       </a>
-
       <a href="page4.html" class="nav-btn next">
         Next <span class="arrow">→</span>
       </a>
     </div>
   </div>
+
+  <button id="musicToggle" class="music-toggle paused" aria-label="Toggle music">🔈</button>
+  <audio id="bgMusic" src="https://files.catbox.moe/bv5zfz.mp3" preload="auto"></audio>
+
+  <script>
+    (function () {
+      const MUSIC_TIME_KEY = "bgMusicTime";
+      const MUSIC_STATE_KEY = "bgMusicState";
+
+      const audio = document.getElementById("bgMusic");
+      const btn   = document.getElementById("musicToggle");
+      if (!audio || !btn) return;
+
+      let savedTime  = parseFloat(localStorage.getItem(MUSIC_TIME_KEY) || "0");
+      let savedState = localStorage.getItem(MUSIC_STATE_KEY) || "paused";
+
+      function setButton(state) {
+        if (state === "playing") {
+          btn.classList.remove("paused");
+          btn.textContent = "🔊";
+        } else {
+          btn.classList.add("paused");
+          btn.textContent = "🔈";
+        }
+      }
+
+      setButton(savedState);
+
+      audio.addEventListener("loadedmetadata", () => {
+        if (!isNaN(savedTime) && savedTime > 0 && savedTime < audio.duration) {
+          audio.currentTime = savedTime;
+        }
+        if (savedState === "playing") {
+          const p = audio.play();
+          if (p && p.catch) {
+            p.catch(() => {
+              savedState = "paused";
+              setButton("paused");
+            });
+          }
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          const p = audio.play();
+          if (p && p.catch) { p.catch(() => {}); }
+          savedState = "playing";
+        } else {
+          audio.pause();
+          savedState = "paused";
+        }
+        setButton(savedState);
+        localStorage.setItem(MUSIC_STATE_KEY, savedState);
+      });
+
+      function saveState() {
+        localStorage.setItem(MUSIC_TIME_KEY, audio.currentTime.toString());
+        localStorage.setItem(MUSIC_STATE_KEY, audio.paused ? "paused" : "playing");
+      }
+
+      window.addEventListener("beforeunload", saveState);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveState();
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <title>For My Dearest Aamna - Page 5 (Songs)</title>
 
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: "Poppins", sans-serif;
       background: #eadbe0;
@@ -17,6 +19,7 @@
       align-items: center;
       min-height: 100vh;
     }
+
     .wrapper {
       width: 100%;
       max-width: 430px;
@@ -24,22 +27,26 @@
       text-align: center;
       position: relative;
     }
+
     .card {
       background: #efe6eb;
       border-radius: 26px;
       padding: 34px 24px 32px;
       box-shadow: 0 18px 50px rgba(0,0,0,0.18);
     }
+
     .title {
       font-family: "Playfair Display", serif;
       font-size: 24px;
       color: #c84857;
       margin-bottom: 26px;
     }
+
     .title .heart {
       font-size: 20px;
       margin-left: 4px;
     }
+
     .cover-box {
       background: #f4ecef;
       border-radius: 24px;
@@ -48,15 +55,28 @@
       width: 230px;
       box-shadow: 0 10px 26px rgba(0,0,0,0.13);
     }
+
     .cover-inner {
       border-radius: 18px;
       overflow: hidden;
       border: 2px solid #f1c3c7;
-    }
-    .cover-inner img {
       width: 100%;
-      display: block;
+      height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f0f3;
     }
+
+    /* fills whole frame */
+    .cover-inner img,
+    .cover-inner video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
     .track-panel {
       background: #f4ecef;
       border-radius: 18px;
@@ -64,22 +84,26 @@
       margin: 0 auto 20px;
       max-width: 260px;
     }
+
     .status-text {
       font-size: 11px;
       letter-spacing: 0.2em;
       color: #c84857;
       margin-bottom: 4px;
     }
+
     .track-title {
       font-size: 16px;
       font-weight: 600;
       color: #333;
     }
+
     .progress-wrapper {
       margin: 6px auto 12px;
       max-width: 280px;
       text-align: left;
     }
+
     .progress-bar {
       width: 100%;
       -webkit-appearance: none;
@@ -89,6 +113,7 @@
       background: #f1c3c9;
       outline: none;
     }
+
     .progress-bar::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -100,15 +125,7 @@
       cursor: pointer;
       border: none;
     }
-    .progress-bar::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #d7424d;
-      box-shadow: 0 0 0 4px rgba(215, 66, 77, 0.35);
-      cursor: pointer;
-      border: none;
-    }
+
     .time-row {
       display: flex;
       justify-content: space-between;
@@ -116,6 +133,7 @@
       color: #555;
       margin-top: 2px;
     }
+
     .controls {
       margin-top: 12px;
       display: flex;
@@ -123,6 +141,7 @@
       gap: 18px;
       align-items: center;
     }
+
     .ctrl-btn {
       width: 42px;
       height: 42px;
@@ -137,6 +156,7 @@
       font-size: 18px;
       color: #c84857;
     }
+
     .ctrl-btn.play {
       width: 60px;
       height: 60px;
@@ -144,19 +164,21 @@
       background: #d7424d;
       color: #fff;
     }
-    .ctrl-btn span {
-      pointer-events: none;
-    }
+
+    .ctrl-btn span { pointer-events: none; }
+
     .ctrl-btn:active {
       transform: translateY(1px);
       box-shadow: 0 5px 14px rgba(0,0,0,0.16);
     }
+
     .nav-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-top: 30px;
     }
+
     .nav-btn {
       display: inline-flex;
       align-items: center;
@@ -172,22 +194,11 @@
       cursor: pointer;
       text-decoration: none;
     }
-    .nav-btn.back {
-      background: #75a4de;
-      color: #10243b;
-    }
-    .nav-btn span.arrow {
-      font-size: 15px;
-    }
+
+    .nav-btn.back { background: #75a4de; color: #10243b; }
+    .nav-btn span.arrow { font-size: 15px; }
     .nav-btn.back span.arrow { margin-right: 6px; }
     .nav-btn.next span.arrow { margin-left: 6px; }
-    .nav-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-    }
-    @media (max-width: 360px) {
-      .title { font-size: 22px; }
-    }
   </style>
 </head>
 <body>
@@ -199,6 +210,7 @@
 
       <div class="cover-box">
         <div class="cover-inner">
+          <video id="coverVideo" autoplay muted loop playsinline></video>
           <img id="coverImage" src="" alt="song cover">
         </div>
       </div>
@@ -217,28 +229,17 @@
       </div>
 
       <div class="controls">
-        <button class="ctrl-btn prev" type="button" id="prevBtn">
-          <span>⏮</span>
-        </button>
-        <button class="ctrl-btn play" type="button" id="playPauseBtn">
-          <span id="playIcon">▶</span>
-        </button>
-        <button class="ctrl-btn next" type="button" id="nextBtn">
-          <span>⏭</span>
-        </button>
+        <button class="ctrl-btn prev" id="prevBtn">⏮</button>
+        <button class="ctrl-btn play" id="playPauseBtn"><span id="playIcon">▶</span></button>
+        <button class="ctrl-btn next" id="nextBtn">⏭</button>
       </div>
 
       <audio id="audio"></audio>
     </div>
 
     <div class="nav-row">
-      <a href="page4.html" class="nav-btn back">
-        <span class="arrow">←</span> Back
-      </a>
-
-      <a href="page6.html" class="nav-btn next">
-        Next <span class="arrow">→</span>
-      </a>
+      <a href="page4.html" class="nav-btn back">← Back</a>
+      <a href="page6.html" class="nav-btn next">Next →</a>
     </div>
   </div>
 
@@ -247,31 +248,37 @@
       {
         title: "Dil Cheez Tujhe Dedi",
         src: "https://files.catbox.moe/10uuz6.mp3",
-        cover: "https://i.ibb.co/1GDTHR9M/cf390d501be25671658bee896520c8f1.gif"
+        video: "https://files.catbox.moe/3mqeih.mp4",
+        cover: "https://files.catbox.moe/k6vgy4.gif"
       },
       {
         title: "Dil Ka Jo Haal",
         src: "https://files.catbox.moe/0p9ahx.mp3",
-        cover: "https://i.ibb.co/HT2cZb2d/87d616ee6ae455cbc0e83e20063c08c7.gif"
+        video: "https://files.catbox.moe/69ufok.mp4",
+        cover: "https://i.ibb.co/MDd3jkqx/87d616ee6ae455cbc0e83e20063c08c7-ezgif-com-reverse.gif"
       },
       {
         title: "Die With A Smile",
         src: "https://files.catbox.moe/n3z1vk.mp3",
-        cover: "https://i.ibb.co/PSWf4Gd/d51253d0d8f7a4ffb17bbce7ea714457.gif"
+        video: "https://files.catbox.moe/rb81xb.mp4",
+        cover: "https://i.ibb.co/spVQCP40/d51253d0d8f7a4ffb17bbce7ea714457-ezgif-com-reverse.gif"
       },
       {
         title: "Haseen",
         src: "https://files.catbox.moe/rg639t.mp3",
+        video: "https://files.catbox.moe/2rbhpu.mp4",
         cover: "https://i.ibb.co/TDrNTdNZ/f441771bcccee65415e7195e2337382a-1.gif"
       },
       {
         title: "Ishqa Ve",
         src: "https://files.catbox.moe/xvgigt.mp3",
-        cover: "https://i.ibb.co/TyZ1bS3/92576d238f5fd179e7264d9ae6fc5568.gif"
+        video: "https://files.catbox.moe/p8n0lq.mp4",
+        cover: "https://i.ibb.co/FLjk4J1y/92576d238f5fd179e7264d9ae6fc5568-ezgif-com-reverse-1.gif"
       }
     ];
 
     const audio = document.getElementById("audio");
+    const coverVideo = document.getElementById("coverVideo");
     const coverImage = document.getElementById("coverImage");
     const trackTitle = document.getElementById("trackTitle");
     const statusText = document.getElementById("statusText");
@@ -294,12 +301,38 @@
       return `${m}:${s}`;
     }
 
+    function useVideoFor(track) {
+      return !!track.video;
+    }
+
+    function syncVideo(track) {
+      if (!useVideoFor(track)) return;
+      if (isPlaying) coverVideo.play().catch(() => {});
+      else coverVideo.pause();
+    }
+
     function loadTrack(index) {
       const track = playlist[index];
       if (!track) return;
+
       audio.src = track.src;
       trackTitle.textContent = track.title;
-      coverImage.src = track.cover;
+
+      if (useVideoFor(track)) {
+        coverImage.style.display = "none";
+        coverVideo.style.display = "block";
+        coverVideo.src = track.video;
+        coverVideo.currentTime = 0;
+        coverVideo.load();
+      } else {
+        coverVideo.pause();
+        coverVideo.removeAttribute("src");
+        coverVideo.load();
+        coverVideo.style.display = "none";
+        coverImage.style.display = "block";
+        coverImage.src = track.cover + "?t=" + Date.now();
+      }
+
       statusText.textContent = "PAUSED";
       playIcon.textContent = "▶";
       isPlaying = false;
@@ -309,42 +342,43 @@
     }
 
     function playTrack() {
+      const track = playlist[currentIndex];
       audio.play().then(() => {
         isPlaying = true;
         statusText.textContent = "PLAYING";
         playIcon.textContent = "⏸";
+        syncVideo(track);
       }).catch(() => {});
     }
 
     function pauseTrack() {
+      const track = playlist[currentIndex];
       audio.pause();
       isPlaying = false;
       statusText.textContent = "PAUSED";
       playIcon.textContent = "▶";
+      syncVideo(track);
     }
 
-    playPauseBtn.addEventListener("click", () => {
+    playPauseBtn.onclick = () => {
       if (!audio.src) return;
-      if (isPlaying) {
-        pauseTrack();
-      } else {
-        playTrack();
-      }
-    });
+      if (isPlaying) pauseTrack();
+      else playTrack();
+    };
 
-    prevBtn.addEventListener("click", () => {
+    prevBtn.onclick = () => {
       currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
       loadTrack(currentIndex);
       playTrack();
-    });
+    };
 
-    nextBtn.addEventListener("click", () => {
+    nextBtn.onclick = () => {
       currentIndex = (currentIndex + 1) % playlist.length;
       loadTrack(currentIndex);
       playTrack();
-    });
+    };
 
-    audio.addEventListener("timeupdate", () => {
+    audio.ontimeupdate = () => {
       if (isSeeking) return;
       const current = audio.currentTime;
       const duration = audio.duration || 0;
@@ -353,29 +387,27 @@
       }
       currentTimeEl.textContent = formatTime(current);
       durationEl.textContent = formatTime(duration);
-    });
+    };
 
-    audio.addEventListener("loadedmetadata", () => {
+    audio.onloadedmetadata = () => {
       durationEl.textContent = formatTime(audio.duration);
-    });
+    };
 
-    audio.addEventListener("ended", () => {
+    audio.onended = () => {
       currentIndex = (currentIndex + 1) % playlist.length;
       loadTrack(currentIndex);
       playTrack();
-    });
+    };
 
-    progressBar.addEventListener("input", () => {
+    progressBar.oninput = () => {
       isSeeking = true;
       const duration = audio.duration || 0;
       audio.currentTime = (progressBar.value / 100) * duration;
-    });
+    };
 
-    progressBar.addEventListener("change", () => {
-      isSeeking = false;
-    });
+    progressBar.onchange = () => { isSeeking = false; };
 
-    // initial load
+    // initial track
     loadTrack(currentIndex);
   </script>
 </body>

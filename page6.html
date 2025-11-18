@@ -2,163 +2,243 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>For My Dearest Aamna - Page 6</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Page 6</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #ded7dc;
-      color: #34343a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+      font-family:"Poppins",sans-serif;
+      background:#dcd2d9;
+      color:#34343a;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
-    .wrapper {
-      width: 100%;
-      max-width: 430px;
-      padding: 40px 24px 30px;
-      text-align: center;
-      position: relative;
+
+    .wrapper{
+      width:100%;
+      max-width:430px;
+      padding:40px 24px 30px;
+      text-align:center;
     }
-    .card {
-      background: #efeaed;
-      border-radius: 26px;
-      padding: 38px 26px 40px;
-      box-shadow: 0 18px 50px rgba(0,0,0,0.18);
-      position: relative;
-      overflow: hidden;
+
+    .card{
+      background:#efe6eb;
+      border-radius:26px;
+      padding:34px 24px 32px;
+      box-shadow:0 18px 50px rgba(0,0,0,0.18);
+      position:relative;
+      overflow:hidden;
     }
-    .top-line {
-      font-size: 13px;
-      letter-spacing: 0.18em;
-      color: #444b59;
-      text-transform: uppercase;
-      margin-bottom: 10px;
+
+    .top-label{
+      font-size:11px;
+      letter-spacing:0.3em;
+      text-transform:uppercase;
+      color:#42485b;
+      margin-bottom:8px;
     }
-    .top-line span {
-      margin-left: 4px;
-      font-size: 14px;
-      color: #c67e9d;
+
+    .main-title{
+      font-family:"Playfair Display",serif;
+      font-size:32px;
+      color:#d26f97;
+      margin-bottom:4px;
     }
-    .thank-main {
-      font-family: "Playfair Display", serif;
-      font-size: 34px;
-      color: #d47ea3;
-      margin-top: 4px;
+
+    .sub-title{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:#34343a;
+      margin-bottom:18px;
     }
-    .thank-sub {
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      color: #222;
-      margin-top: 6px;
+
+    .sub-title span{font-size:22px;}
+
+    .body-text{
+      font-size:13px;
+      line-height:1.7;
+      color:#55515b;
+      margin-bottom:18px;
     }
-    .thank-sub .hearts {
-      margin-left: 4px;
-      font-size: 18px;
-      color: #d86b9a;
+
+    .heart-mid{
+      font-size:18px;
+      margin-bottom:12px;
     }
-    .message {
-      margin-top: 24px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #55555c;
-      padding: 0 16px;
+
+    .footer-line{
+      font-size:13px;
+      color:#b04e6e;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
     }
-    .center-heart {
-      margin-top: 14px;
-      font-size: 18px;
-      color: #d86b9a;
+
+    .footer-line span.emoji{font-size:16px;}
+
+    .kitty-thanks{
+      position:absolute;
+      right:6px;
+      bottom:-4px;
+      width:150px;
     }
-    .bottom-note {
-      margin-top: 18px;
-      font-size: 12px;
-      letter-spacing: 0.05em;
-      color: #6a6671;
+
+    .kitty-thanks img{
+      width:100%;
+      display:block;
     }
-    .bottom-note .heart {
-      color: #d86b9a;
-      margin: 0 3px;
+
+    .nav-row{
+      margin-top:26px;
+      display:flex;
+      justify-content:center;
     }
-    .kitten {
-      position: absolute;
-      right: -6px;
-      bottom: -4px;
-      width: 135px;
+
+    .nav-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 32px;
+      border-radius:999px;
+      border:none;
+      background:#e4b5c9;
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+      font-size:15px;
+      font-weight:500;
+      color:#3f3140;
+      cursor:pointer;
+      text-decoration:none;
     }
-    .nav-row {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 28px;
-    }
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 26px;
-      border-radius: 999px;
+
+    .nav-btn.back{background:#e4b5c9;color:#3f3140;}
+    .nav-btn span.arrow{margin-right:6px;font-size:15px;}
+
+    .music-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       border: none;
-      background: #e4b5c9;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-      font-size: 15px;
-      font-weight: 500;
-      color: #3f3140;
+      background: #d7424d;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      text-decoration: none;
     }
-    .nav-btn span.arrow {
-      font-size: 15px;
-      margin-right: 6px;
-    }
-    .nav-btn:active {
-      transform: translateY(1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.17);
-    }
-    @media (max-width: 360px) {
-      .thank-main { font-size: 30px; }
-      .thank-sub { font-size: 18px; }
-      .kitten { width: 120px; }
-    }
+    .music-toggle.paused { background:#a0a0a0; }
   </style>
 </head>
 <body>
   <div class="wrapper">
     <div class="card">
-      <div class="top-line">
-        FOR MY LOVE <span>✦</span>
-      </div>
+      <div class="top-label">FOR MY LOVE ✦</div>
 
-      <div class="thank-main">Thank You</div>
-      <div class="thank-sub">
-        FOR BEING MINE <span class="hearts">💕</span>
-      </div>
+      <div class="main-title">Thank You</div>
+      <div class="sub-title">FOR BEING MINE <span>💕</span></div>
 
-      <p class="message">
-        I hope this little space made you smile.<br>
-        You are my favorite part of every day, always.
+      <p class="body-text">
+        I hope this little space made you smile. You are my favorite part of every day. 💗
       </p>
 
-      <div class="center-heart">💗</div>
+      <div class="heart-mid">💗</div>
 
-      <div class="bottom-note">
-        made with <span class="heart">💗</span> and sparkles — forever yours
+      <div class="footer-line">
+        made with 💗 and sparkles — forever yours, Your Pyaara Janwar
+        <span class="emoji">✨</span>
       </div>
 
-      <img
-        class="kitten"
-        src="https://i.ibb.co/nNgqrjsc/1763411945048.png"
-        alt="Thank you kitten">
+      <div class="kitty-thanks">
+        <img src="https://i.ibb.co/nNgqrjsc/1763411945048.png" alt="Thank you kitty">
+      </div>
     </div>
 
     <div class="nav-row">
-      <a href="page5.html" class="nav-btn">
+      <a href="page5.html" class="nav-btn back">
         <span class="arrow">←</span> Back
       </a>
     </div>
   </div>
+
+  <button id="musicToggle" class="music-toggle paused" aria-label="Toggle music">🔈</button>
+  <audio id="bgMusic" src="https://files.catbox.moe/bv5zfz.mp3" preload="auto"></audio>
+
+  <script>
+    (function () {
+      const MUSIC_TIME_KEY = "bgMusicTime";
+      const MUSIC_STATE_KEY = "bgMusicState";
+
+      const audio = document.getElementById("bgMusic");
+      const btn   = document.getElementById("musicToggle");
+      if (!audio || !btn) return;
+
+      let savedTime  = parseFloat(localStorage.getItem(MUSIC_TIME_KEY) || "0");
+      let savedState = localStorage.getItem(MUSIC_STATE_KEY) || "paused";
+
+      function setButton(state) {
+        if (state === "playing") {
+          btn.classList.remove("paused");
+          btn.textContent = "🔊";
+        } else {
+          btn.classList.add("paused");
+          btn.textContent = "🔈";
+        }
+      }
+
+      setButton(savedState);
+
+      audio.addEventListener("loadedmetadata", () => {
+        if (!isNaN(savedTime) && savedTime > 0 && savedTime < audio.duration) {
+          audio.currentTime = savedTime;
+        }
+        if (savedState === "playing") {
+          const p = audio.play();
+          if (p && p.catch) {
+            p.catch(() => {
+              savedState = "paused";
+              setButton("paused");
+            });
+          }
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          const p = audio.play();
+          if (p && p.catch) { p.catch(() => {}); }
+          savedState = "playing";
+        } else {
+          audio.pause();
+          savedState = "paused";
+        }
+        setButton(savedState);
+        localStorage.setItem(MUSIC_STATE_KEY, savedState);
+      });
+
+      function saveState() {
+        localStorage.setItem(MUSIC_TIME_KEY, audio.currentTime.toString());
+        localStorage.setItem(MUSIC_STATE_KEY, audio.paused ? "paused" : "playing");
+      }
+
+      window.addEventListener("beforeunload", saveState);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") saveState();
+      });
+    })();
+  </script>
 </body>
 </html>

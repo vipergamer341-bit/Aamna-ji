@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>For My Dearest Aamna - Page 5 (Songs)</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -68,7 +68,6 @@
       background: #f9f0f3;
     }
 
-    /* fills whole frame */
     .cover-inner img,
     .cover-inner video {
       width: 100%;
@@ -196,9 +195,6 @@
     }
 
     .nav-btn.back { background: #75a4de; color: #10243b; }
-    .nav-btn span.arrow { font-size: 15px; }
-    .nav-btn.back span.arrow { margin-right: 6px; }
-    .nav-btn.next span.arrow { margin-left: 6px; }
   </style>
 </head>
 <body>
@@ -239,7 +235,7 @@
 
     <div class="nav-row">
       <a href="page4.html" class="nav-btn back">← Back</a>
-      <a href="page6.html" class="nav-btn next">Next →</a>
+      <a href="page6.html" class="nav-btn">Next →</a>
     </div>
   </div>
 
@@ -301,9 +297,7 @@
       return `${m}:${s}`;
     }
 
-    function useVideoFor(track) {
-      return !!track.video;
-    }
+    function useVideoFor(track) { return !!track.video; }
 
     function syncVideo(track) {
       if (!useVideoFor(track)) return;
@@ -407,7 +401,6 @@
 
     progressBar.onchange = () => { isSeeking = false; };
 
-    // initial track
     loadTrack(currentIndex);
   </script>
 </body>

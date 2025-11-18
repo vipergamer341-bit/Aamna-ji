@@ -134,6 +134,29 @@
       transform: translateY(1px);
       box-shadow: 0 7px 16px rgba(0,0,0,0.18);
     }
+
+    /* Floating music toggle button */
+    .music-toggle {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 9999;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: none;
+      background: #d7424d;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .music-toggle.paused {
+      background: #a0a0a0;
+    }
   </style>
 </head>
 <body>
@@ -166,17 +189,33 @@
     </div>
   </div>
 
-  <!-- Background music shared across pages -->
+  <!-- Background music toggle + shared logic -->
+  <button id="musicToggle" class="music-toggle paused" aria-label="Toggle music">🔈</button>
   <audio id="bgMusic" src="https://files.catbox.moe/bv5zfz.mp3" preload="auto"></audio>
+
   <script>
     (function () {
       const MUSIC_TIME_KEY = "bgMusicTime";
       const MUSIC_STATE_KEY = "bgMusicState";
-      const audio = document.getElementById("bgMusic");
-      if (!audio) return;
 
-      const savedTime = parseFloat(localStorage.getItem(MUSIC_TIME_KEY) || "0");
-      const savedState = localStorage.getItem(MUSIC_STATE_KEY) || "playing";
+      const audio = document.getElementById("bgMusic");
+      const btn   = document.getElementById("musicToggle");
+      if (!audio || !btn) return;
+
+      let savedTime  = parseFloat(localStorage.getItem(MUSIC_TIME_KEY) || "0");
+      let savedState = localStorage.getItem(MUSIC_STATE_KEY) || "paused";
+
+      function setButton(state) {
+        if (state === "playing") {
+          btn.classList.remove("paused");
+          btn.textContent = "🔊";
+        } else {
+          btn.classList.add("paused");
+          btn.textContent = "🔈";
+        }
+      }
+
+      setButton(savedState);
 
       audio.addEventListener("loadedmetadata", () => {
         if (!isNaN(savedTime) && savedTime > 0 && savedTime < audio.duration) {
@@ -184,8 +223,26 @@
         }
         if (savedState === "playing") {
           const p = audio.play();
-          if (p && p.catch) p.catch(() => {});
+          if (p && p.catch) {
+            p.catch(() => {
+              savedState = "paused";
+              setButton("paused");
+            });
+          }
         }
+      });
+
+      btn.addEventListener("click", () => {
+        if (audio.paused) {
+          const p = audio.play();
+          if (p && p.catch) { p.catch(() => {}); }
+          savedState = "playing";
+        } else {
+          audio.pause();
+          savedState = "paused";
+        }
+        setButton(savedState);
+        localStorage.setItem(MUSIC_STATE_KEY, savedState);
       });
 
       function saveState() {
